@@ -2,6 +2,7 @@ import docx
 from docx import Document
 from docx import table
 from openpyxl import load_workbook
+import fileinput
 
 
 
@@ -51,7 +52,9 @@ def get_para_data(output_doc_name, paragraph, style, append_last_run_with=""):
     output_para.paragraph_format.space_after = 0
     print("spc",paragraph.paragraph_format.space_after)
 
-wb = load_workbook(filename = '30 august - 3 september 2021a.xlsx')
+
+
+wb = load_workbook(filename = fileinput.filename()) # '30 august - 3 september 2021a.xlsx')
 sheet = wb["30 august - 3 september 2021a"]
 
 wb2 = load_workbook("lastehoiud ja kuupäevad.xlsx")
